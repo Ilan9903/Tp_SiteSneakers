@@ -1,0 +1,100 @@
+/* Supprimer les marges et les paddings par défaut de html et body */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* S'assure que le padding et la bordure sont inclus dans la taille totale des éléments */
+    width: 100%;
+}
+
+/* Appliquer box-sizing à tous les éléments */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Style de base pour le header */
+header {
+    background-color: #000000;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Pour s'assurer que le header reste au-dessus des autres contenus */
+}
+
+/* Ajout d'un padding top au body pour compenser la hauteur du header fixe */
+body {
+    padding-top: 70px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style pour le logo */
+header .logo {
+    font-size: 2.5em;
+    color: #ffffff;
+    font-family: Freestyle Script;
+
+}
+
+/* Style pour la navigation */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li {
+    margin: 0;
+    /* Assurez-vous qu'il n'y a pas de marge supplémentaire */
+}
+
+nav ul li a {
+    text-decoration: underline;
+    color: #ffffff;
+    font-family: Freestyle Script;
+    font-size: 1.5em;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Style pour la barre de recherche */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 2.5px;
+    font-size: 130%;
+    margin: 0;
+    border-radius: 15px;
+    /* Ajout de bord arrondis */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
