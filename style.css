@@ -3,7 +3,6 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* S'assure que le padding et la bordure sont inclus dans la taille totale des éléments */
     width: 100%;
 }
 
@@ -23,7 +22,6 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* Pour s'assurer que le header reste au-dessus des autres contenus */
 }
 
 /* Ajout d'un padding top au body pour compenser la hauteur du header fixe */
@@ -50,7 +48,6 @@ nav ul {
 
 nav ul li {
     margin: 0;
-    /* Assurez-vous qu'il n'y a pas de marge supplémentaire */
 }
 
 nav ul li a {
@@ -58,9 +55,6 @@ nav ul li a {
     color: #ffffff;
     font-family: 'Freestyle Script', cursive;
     font-size: 1.5em;
-    vertical-align: middle;
-    line-height: 1.5;
-    text-align: center;
 }
 
 nav ul li a:hover {
@@ -78,7 +72,6 @@ nav ul li a:hover {
     font-size: 130%;
     margin: 0;
     border-radius: 15px;
-    /* Ajout de bord arrondis */
 }
 
 main {
@@ -105,17 +98,19 @@ footer {
     align-items: center;
 }
 
+/* Container centré avec grille flexible */
 .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin-top: 50px;
-    position: relative;
+    padding: 50px;
 }
 
 .rectangle {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     height: 450px;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -126,90 +121,4 @@ footer {
 .rectangle:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Positioning the rectangles absolutely within the container */
-#Dunk-sb-travis {
-    position: absolute;
-    top: 50px;
-    left: 350px;
-}
-
-#Dunk-sb-dodgers {
-    position: absolute;
-    top: 50px;
-    left: 750px;
-}
-
-#Dunk-sb-strange-love {
-    position: absolute;
-    top: 50px;
-    left: 1150px;
-}
-#Jordan-travis-mocha
-{
-    position: absolute;
-    top: 50px;
-    left: 1550px;
-}
-
-#Jordan-travis-olive
-{
-    position: absolute;
-    top: 550px;
-    left: 350px;
-}
-
-#Jordan-4-sb
-{
-    position: absolute;
-    top: 550px;
-    left: 750px;
-}
-#Dunk-sb-parra
-{
-    position: absolute;
-    top: 550px;
-    left: 1150px;
-}
-#Lanvin
-{
-    position: absolute;
-    top: 550px;
-    left: 1550px;
-}
-
-#Jordan-1-dior
-{
-    position: absolute;
-    top: 1050px;
-    left: 350px;
-}
-
-#air-force-ow
-{
-    position: absolute;
-    top: 1050px;
-    left: 750px;
-}
-
-#Balenciaga-track
-{
-    position: absolute;
-    top: 1050px;
-    left: 1150px;
-}
-
-#Foam
-{
-    position: absolute;
-    top: 1050px;
-    left: 1550px;
-}
-
-#Cars
-{
-    position: absolute;
-    top: 1550px;
-    left: 350px;
 }
