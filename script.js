@@ -12,3 +12,10 @@ window.addEventListener('scroll', () => {
         footer.style.display = 'block';
     }
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+    });
+});
