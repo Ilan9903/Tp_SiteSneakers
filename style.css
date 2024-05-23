@@ -28,7 +28,7 @@ body.dark-theme {
 /* Style de base pour le header */
 header {
     background-color: #000000;
-    padding: 20px 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center; /* Centre verticalement le contenu du header */
@@ -45,7 +45,7 @@ body.dark-theme header {
 
 /* Style pour le logo */
 header .logo {
-    font-size: 3.5em;
+    font-size: 3em;
     color: #ffffff;
     font-family: 'Freestyle Script', cursive;
 }
@@ -88,6 +88,8 @@ body.dark-theme nav ul li a {
     color: #ffffff;
 }
 
+
+
 /* Style du bouton de changement de thème */
 #theme-toggle {
     padding: 10px 20px;
@@ -114,6 +116,12 @@ body.dark-theme #theme-toggle:hover {
 }
 
 /* Conteneur centré avec grille flexible */
+
+.Bienvenue {
+    font-family: 'Architype Van Doesburg', sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
