@@ -1,60 +1,70 @@
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    margin: 10px;
-    margin-top: 10px;
-    background-color: #f0f0f0;
 }
 
-.container {
-    width: 80%; /* Largeur du conteneur parent */
-    max-width: 1200px; /* Largeur maximale du conteneur parent */
-    margin-right: 200px; /* Marge à droite */
+.carousel-container {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    margin: 90px;
+    width: 800px; /* Largeur plus grande */
+    height: 450px; /* Hauteur plus petite pour former un rectangle */
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.219); /* Ajouter une ombre autour du carrousel */
 }
 
 .carousel {
-    position: relative;
-    width: 3000px;
-    max-width: 450px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-inner {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    height: 100%; /* Assurez-vous que la hauteur du carrousel est de 100% */
 }
 
 .carousel-item {
     min-width: 100%;
-    transition: opacity 0.5s ease-in-out;
+    box-sizing: border-box;
 }
 
 .carousel-item img {
     width: 100%;
-    border-radius: 10px;
+    height: 100%;
+    object-fit: cover; /* Couvre tout l'espace sans déformer l'image */
+    display: block;
 }
 
-.carousel-control {
+.prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.5);
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
-    border-radius: 50%;
-    user-select: none;
 }
 
-.carousel-control.prev {
+.prev {
     left: 10px;
 }
 
-.carousel-control.next {
+.next {
     right: 10px;
+}
+
+.texte-titre {
+    margin-left: 110px;
+    color: black;
+    font-family: 'Dom Casual';
+}
+
+.text-section {
+    position: relative; 
+    margin-top: 20px; /* Ajustez cette valeur pour rapprocher davantage le texte */
+    margin-left: 130px;
+    width: 33%; /* Définissez la largeur souhaitée */
+    color: #000000ab;
+    font-family: 'Dom Casual';
+    font-size: 16px;
 }
