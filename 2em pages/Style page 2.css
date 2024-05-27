@@ -1,19 +1,24 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #16151579;
+}
+
+.content-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
 }
 
 .carousel-container {
     position: relative;
-    top: 10px;
-    left: 10px;
-    margin: 90px;
-    width: 800px; /* Largeur plus grande */
-    height: 450px; /* Hauteur plus petite pour former un rectangle */
+    margin-right: 20px;
+    width: 800px;
+    height: 450px;
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.219); /* Ajouter une ombre autour du carrousel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre autour du carrousel */
 }
 
 .carousel {
@@ -53,18 +58,29 @@ body {
     right: 10px;
 }
 
+.side-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: calc(100% - 850px); /* Ajuste automatiquement en fonction de la taille de la fenêtre */
+    padding: 20px; /* Réduit le padding pour donner plus d'espace au texte */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre autour du conteneur */
+    background-color: #fff;
+}
+
 .texte-titre {
-    margin-left: 110px;
+    margin-bottom: 20px;
     color: black;
     font-family: 'Dom Casual';
 }
 
 .text-section {
-    position: relative; 
-    margin-top: 20px; /* Ajustez cette valeur pour rapprocher davantage le texte */
-    margin-left: 130px;
-    width: 33%; /* Définissez la largeur souhaitée */
+    margin-bottom: 20px;
     color: #000000ab;
     font-family: 'Dom Casual';
     font-size: 16px;
+    flex-grow: 1; /* Assure que cette section prenne tout l'espace disponible */
 }
+
