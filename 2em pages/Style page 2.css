@@ -1,13 +1,18 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #16151579;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .content-container {
     display: flex;
     align-items: flex-start;
     padding: 10px;
+    justify-content: center;
 }
 
 .carousel-container {
@@ -18,13 +23,13 @@ body {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre autour du carrousel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    height: 100%; /* Assurez-vous que la hauteur du carrousel est de 100% */
+    height: 100%;
 }
 
 .carousel-item {
@@ -35,15 +40,16 @@ body {
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Couvre tout l'espace sans déformer l'image */
+    object-fit: cover;
     display: block;
 }
 
-.prev, .next {
+.prev,
+.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 10px;
@@ -62,11 +68,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: calc(100% - 850px); /* Ajuste automatiquement en fonction de la taille de la fenêtre */
-    padding: 20px; /* Réduit le padding pour donner plus d'espace au texte */
+    width: 300px;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre autour du conteneur */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #fff;
 }
 
@@ -81,6 +87,14 @@ body {
     color: #000000ab;
     font-family: 'Dom Casual';
     font-size: 16px;
-    flex-grow: 1; /* Assure que cette section prenne tout l'espace disponible */
+    flex-grow: 1;
 }
 
+.size-selection {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.size-selection label {
+    margin-right: 10px;
+}
