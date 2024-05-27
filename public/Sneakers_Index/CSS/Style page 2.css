@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #16151579;
+}
+
+.content-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.carousel-container {
+    position: relative;
+    margin-right: 20px;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre autour du carrousel */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Assurez-vous que la hauteur du carrousel est de 100% */
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Couvre tout l'espace sans déformer l'image */
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.side-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: calc(100% - 850px); /* Ajuste automatiquement en fonction de la taille de la fenêtre */
+    padding: 20px; /* Réduit le padding pour donner plus d'espace au texte */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajouter une ombre autour du conteneur */
+    background-color: #fff;
+}
+
+.texte-titre {
+    margin-bottom: 20px;
+    color: black;
+    font-family: 'Dom Casual';
+}
+
+.text-section {
+    margin-bottom: 20px;
+    color: #000000ab;
+    font-family: 'Dom Casual';
+    font-size: 16px;
+    flex-grow: 1; /* Assure que cette section prenne tout l'espace disponible */
+}
+
