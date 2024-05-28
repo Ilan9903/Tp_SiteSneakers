@@ -17,17 +17,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Vérification de la méthode POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Hash le mot de passe
+    // Affichage pour le débogage
+    echo "Form data received: Name - $name, Email - $email, Password - $password<br>";
+
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Préparer et exécuter la requête SQL
     $stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
     if ($stmt === false) {
         die("Prepare failed: " . htmlspecialchars($conn->error));
@@ -36,21 +35,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $name, $email, $hashed_password);
 
     if ($stmt->execute()) {
-        // Rediriger vers la page de confirmation
-        header("Location: confirmation.html");
+        // Affichage pour le débogage
+        echo "Insertion réussie<br>";
+        // Supprimer l'instruction echo et réactiver la redirection une fois que tout fonctionne correctement
+        header("Location: /public/Connexion/verif.html");
+        exit();
     } else {
-        $message = "Erreur lors de l'inscription: " . htmlspecialchars($stmt->error);
-        // Rediriger vers la page d'inscription avec un message d'erreur
-        header("Location: signin.html?message=" . urlencode($message));
+        echo "Erreur lors de l'inscription: " . htmlspecialchars($stmt->error) . "<br>";
+        header("Location: /public/Connexion/verif.html");
     }
 
-    // Fermer la requête et la connexion
     $stmt->close();
     $conn->close();
-    exit();
 } else {
     echo "No POST data received.<br>";
 }
 ?>
-
-
