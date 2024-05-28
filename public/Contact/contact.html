@@ -27,14 +27,23 @@
         <p class="Bienvenue">Bienvenue sur le plus grand site d'achat de Sneakers.</p>
     </main>
 
-    <form action="signin.php" method="post">
+    <form action="post">
+        <label for="">Nom :</label>
+        <input type="name" placeholder="Entrez votre Nom"></input>
+        <br>
+        <label for="">Prénom :</label>
+        <input type="name" placeholder="Entrez votre Prénom"></input>
+        <br>
         <label for="">Adresse Mail : </label>
-        <input type="email" name="email" placeholder="Tapez votre E-Mail"></input>
+        <input type="email" placeholder="Tapez votre Mail"></input>
         <br>
         <label for="">Mot de Passe : </label>
-        <input type="password" name="password" placeholder="Entrez votre MDP"></input>
+        <input type="password" placeholder="Entrez un MDP"></input>
         <br>
-        <a href="/public/Connexion/signup.html">Créer un Compte</a>
+        <label for="">Confirmer : </label>
+        <input type="password" placeholder="Entrez à nouveau"></input>
+        <br>
+        <a href="/public/Connexion/signin.html">Se Connecter</a>
         <br>
         <input type="reset"> <input type="submit">
     </form>
