@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Paramètres de connexion à la base de données
 $servername = "localhost";
 $username = "root";
@@ -13,32 +17,38 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Vérification de la méthode POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
+    $name = $_POST['name'];
     $email = $_POST['email'];
-    $address = $_POST['adresse'];
     $password = $_POST['password'];
-    $phone_number = $_POST['phone_number'];
-    $zip = $_POST['zip'];
-    $city = $_POST['city'];
-    $country = $_POST['country'];
 
-    // Hacher le mot de passe
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Préparer et exécuter la requête SQL
-    $stmt = $conn->prepare("INSERT INTO user (email, adresse, password, phone_number, zip, city, country) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $email, $adresse, $hashed_password, $phone_number, $zip, $city, $country);
-
-    if ($stmt->execute()) {
-        echo "Inscription réussie.";
-    } else {
-        echo "Erreur: " . $stmt->error;
+    $stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
+    if ($stmt === false) {
+        die("Prepare failed: " . htmlspecialchars($conn->error));
     }
 
-    // Fermer la requête et la connexion
+    $stmt->bind_param("sss", $name, $email, $hashed_password);
+
+    if ($stmt->execute()) {
+        // Redirection après l'insertion réussie
+        echo "Redirection réussie après l'insertion.";
+        header("Location: /public/Connexion/verif.html");
+        exit();
+    } else {
+        // En cas d'erreur lors de l'insertion, rediriger également vers la page de vérification
+        echo "Erreur lors de l'insertion.";
+        header("Location: /public/Connexion/verif.html");
+        exit();
+    }
+
     $stmt->close();
     $conn->close();
+} else {
+    // Si aucune donnée POST n'est reçue, rediriger également vers la page de vérification
+    echo "Aucune donnée POST reçue.";
+    header("Location: /public/Connexion/verif.html");
+    exit();
 }
 ?>
