@@ -27,26 +27,20 @@
         <p class="Bienvenue">Bienvenue sur le plus grand site d'achat de Sneakers.</p>
     </main>
 
-    <form action="post">
-        <label for="">Nom :</label>
-        <input type="name" placeholder="Entrez votre Nom"></input>
-        <br>
-        <label for="">Prénom :</label>
-        <input type="name" placeholder="Entrez votre Prénom"></input>
-        <br>
-        <label for="">Adresse Mail : </label>
-        <input type="email" placeholder="Tapez votre Mail"></input>
-        <br>
-        <label for="">Mot de Passe : </label>
-        <input type="password" placeholder="Entrez un MDP"></input>
-        <br>
-        <label for="">Confirmer : </label>
-        <input type="password" placeholder="Entrez à nouveau"></input>
-        <br>
-        <a href="/public/Connexion/signin.html">Se Connecter</a>
-        <br>
-        <input type="reset"> <input type="submit">
-    </form>
+    <div class="wrapper-contact">
+        <input type="checkbox" class="toggle">
+        <div class="flip-card__inner">
+        <div class="flip-card__front">
+            <div class="title">Contactez-Nous</div>
+                <form class="flip-card__form" action="signin.php" method="post">
+                    <input class="flip-card__input" name="email" placeholder="Email" type="email">
+                    <input class="flip-card__input" name="objet" placeholder="Objet" type="text">
+                    <textarea name="textarea" placeholder="Ecrivez votre message !"></textarea>
+                    <button class="flip-card__btn">Envoyer</button>
+                </form>
+            </div>
+        </div>
+   </div>
 
     <footer id="footer">
         <p>Copyright © 2024 (Created by Nathan, Ilan, Shayaan, Romain et Mathieu)</p>

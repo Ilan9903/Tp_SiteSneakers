@@ -27,17 +27,34 @@
         <p class="Bienvenue">Bienvenue sur le plus grand site d'achat de Sneakers.</p>
     </main>
 
-    <form action="signin.php" method="post">
-        <label for="">Adresse Mail : </label>
-        <input type="email" name="email" placeholder="Tapez votre E-Mail"></input>
-        <br>
-        <label for="">Mot de Passe : </label>
-        <input type="password" name="password" placeholder="Entrez votre MDP"></input>
-        <br>
-        <a href="/public/Connexion/signup.html">Créer un Compte</a>
-        <br>
-        <input type="reset"> <input type="submit">
-    </form>
+    <div class="wrapper">
+        <div class="card-switch">
+            <label class="switch">
+               <input type="checkbox" class="toggle">
+               <span class="slider"></span>
+               <span class="card-side"></span>
+               <div class="flip-card__inner">
+                  <div class="flip-card__front">
+                     <div class="title">Log in</div>
+                     <form class="flip-card__form" action="signin.php" method="post">
+                        <input class="flip-card__input" name="email" placeholder="Email" type="email">
+                        <input class="flip-card__input" name="password" placeholder="Password" type="password">
+                        <button class="flip-card__btn">Let's go !</button>
+                     </form>
+                  </div>
+                  <div class="flip-card__back">
+                     <div class="title">Sign up</div>
+                     <form class="flip-card__form" action="">
+                        <input class="flip-card__input" placeholder="Name" type="name">
+                        <input class="flip-card__input" name="email" placeholder="Email" type="email">
+                        <input class="flip-card__input" name="password" placeholder="Password" type="password">
+                        <button class="flip-card__btn">Confirmez !</button>
+                     </form>
+                  </div>
+               </div>
+            </label>
+        </div>   
+   </div>
 
     <footer id="footer">
         <p>Copyright © 2024 (Created by Nathan, Ilan, Shayaan, Romain et Mathieu)</p>
