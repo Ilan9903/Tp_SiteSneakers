@@ -11,7 +11,7 @@ html, body {
     box-sizing: inherit;
 }
 
-/* Thème clair par défaut */
+/* Thème clair */
 body {
     padding-top: 70px;
     font-family: Arial, sans-serif;
@@ -25,13 +25,13 @@ body.dark-theme {
     color: #ffffff;
 }
 
-/* Style de base pour le header */
+/* Style pour le header */
 header {
     background-color: #000000;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Centre verticalement le contenu du header */
+    align-items: center; 
     position: fixed;
     top: 0;
     left: 0;
@@ -57,7 +57,7 @@ body.dark-theme header .logo {
 /* Style pour la navigation */
 nav {
     display: flex;
-    align-items: center; /* Centre verticalement les éléments de la navigation */
+    align-items: center;
 }
 
 nav ul {
@@ -66,7 +66,7 @@ nav ul {
     padding: 0;
     display: flex;
     gap: 10px;
-    align-items: center; /* Centre verticalement les éléments de la liste */
+    align-items: center; 
 }
 
 nav ul li {
