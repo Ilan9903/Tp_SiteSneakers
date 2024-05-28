@@ -22,9 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Affichage pour le débogage
-    echo "Form data received: Name - $name, Email - $email, Password - $password<br>";
-
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
@@ -35,19 +32,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $name, $email, $hashed_password);
 
     if ($stmt->execute()) {
-        // Affichage pour le débogage
-        echo "Insertion réussie<br>";
-        // Supprimer l'instruction echo et réactiver la redirection une fois que tout fonctionne correctement
+        // Redirection après l'insertion réussie
+        echo "Redirection réussie après l'insertion.";
         header("Location: /public/Connexion/verif.html");
         exit();
     } else {
-        echo "Erreur lors de l'inscription: " . htmlspecialchars($stmt->error) . "<br>";
+        // En cas d'erreur lors de l'insertion, rediriger également vers la page de vérification
+        echo "Erreur lors de l'insertion.";
         header("Location: /public/Connexion/verif.html");
+        exit();
     }
 
     $stmt->close();
     $conn->close();
 } else {
-    echo "No POST data received.<br>";
+    // Si aucune donnée POST n'est reçue, rediriger également vers la page de vérification
+    echo "Aucune donnée POST reçue.";
+    header("Location: /public/Connexion/verif.html");
+    exit();
 }
 ?>
